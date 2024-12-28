@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import WhatIsHisabuk from '../components/WhatIsHisabuk';
 import HowItWorks from '../components/HowItWorks';
-// import Footer from '../components/Footer';
+import Footer from '../components/Footer';
 import bgimage from '../assets/images/homepage_img5.png';
 const myStyle = {
     backgroundImage:
@@ -26,7 +26,7 @@ const Homepage = () => (
 
         <WhatIsHisabuk />
         <HowItWorks />
-        {/* <Footer /> */}
+        <Footer />
     </>
 );
 export default Homepage;

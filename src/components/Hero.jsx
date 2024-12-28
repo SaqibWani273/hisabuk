@@ -4,7 +4,7 @@ import Button from './Button';
 const Hero = () => (
 
 
-    <section className="absolute top-1/3 mt-8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+    <section className="absolute top-1/2  left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
         {/* <section className="absolute left-0 right-0 margin-auto top-8  text-center  left-1/2  "> */}
         <h1 className="text-4xl font-bold text-blue-800 mb-4 ">
             Welcome to Hisabuk
