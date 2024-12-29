@@ -1,10 +1,10 @@
 import React from 'react';
-import categories from "../assets/images/categories1.svg";
-import track from "../assets/images/track.svg";
-import improve from "../assets/images/improve.svg";
-import inspired from "../assets/images/inspired1.jpg";
-import reward from "../assets/images/inspired2.jpg";
-import Button from './Button';
+import categories from "../../assets/images/categories1.svg";
+import track from "../../assets/images/track.svg";
+import improve from "../../assets/images/improve.svg";
+import inspired from "../../assets/images/inspired1.jpg";
+import reward from "../../assets/images/inspired2.jpg";
+import Button from '../Button';
 
 
 const steps = [
@@ -66,7 +66,7 @@ const HowItWorks = () => (
                     width="560"
                     height="315"
                     // https://youtu.be/?si=
-                    src="https://www.youtube.com/embed/Hfk2IXRolP0"
+                    src="https://www.youtube.com/embed/IB_M5lfJDzI"
                     title="YouTube video"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

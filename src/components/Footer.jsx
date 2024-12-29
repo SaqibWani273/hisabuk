@@ -1,110 +1,150 @@
 
+const footerData = [{
+    title: 'HISABUK',
+    links: [
+        { name: 'About', url: '#', },
+        { name: 'Feedback & Suggestions', url: '#' },
+
+    ],
+},
+{
+    title: 'CONTACT US',
+    links: [
+        {
+            name: 'Facebook', url: '#', svg: <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-7 w-5"
+                fill="currentColor"
+                style={{ color: "#1877f2" }}
+                viewBox="0 0 24 24"
+            >
+                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+            </svg>
+        },
+        {
+            name: 'Twitter', url: '#', svg: <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-7 w-5"
+                fill="currentColor"
+                style={{ color: "#1da1f2" }}
+                viewBox="0 0 24 24"
+            >
+                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+            </svg>
+        },
+        {
+            name: 'Instagram', url: '#', svg: <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-7 w-5"
+                fill="currentColor"
+                style={{ color: "#c13584" }}
+                viewBox="0 0 24 24"
+            >
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+        },
+        {
+            name: 'LinkedIn', url: '#', svg: <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-7 w-5"
+                fill="currentColor"
+                style={{ color: "#0077b5" }}
+                viewBox="0 0 24 24"
+            >
+                <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+            </svg>
+        },
+        {
+            name: 'Email', url: '#', svg: <svg
+                className="h-7 w-5"
+
+                fill="currentColor"
+                style={{ color: "#c13584" }}
+                viewBox="0 0 24 24"
+
+            >
+                <path d="M20 18h-2V9.25L12 13 6 9.25V18H4V6h1.2l6.8 4.25L18.8 6H20m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z" />
+            </svg>
+        },
+    ]
+},
+{
+    title: 'LEGAL',
+    links: [
+        { name: 'Privacy Policy', url: '#' },
+        { name: 'Terms & Conditions', url: '#' },
+        { name: 'Licensing', url: '#' },
+
+    ]
+},
+{
+    title: 'DOWNLOAD APP',
+    links: [
+        {
+            name: 'Android', url: '#',
+            svg: <svg
+                className="h-7 w-5"
+
+                style={{ color: "#3ddc84" }}
+
+
+                fill="currentColor"
+                viewBox="0 0 1024 1024"
+
+            >
+                <path d="M270.1 741.7c0 23.4 19.1 42.5 42.6 42.5h48.7v120.4c0 30.5 24.5 55.4 54.6 55.4 30.2 0 54.6-24.8 54.6-55.4V784.1h85v120.4c0 30.5 24.5 55.4 54.6 55.4 30.2 0 54.6-24.8 54.6-55.4V784.1h48.7c23.5 0 42.6-19.1 42.6-42.5V346.4h-486v395.3zm357.1-600.1 44.9-65c2.6-3.8 2-8.9-1.5-11.4-3.5-2.4-8.5-1.2-11.1 2.6l-46.6 67.6c-30.7-12.1-64.9-18.8-100.8-18.8-35.9 0-70.1 6.7-100.8 18.8l-46.6-67.5c-2.6-3.8-7.6-5.1-11.1-2.6-3.5 2.4-4.1 7.4-1.5 11.4l44.9 65c-71.4 33.2-121.4 96.1-127.8 169.6h486c-6.6-73.6-56.7-136.5-128-169.7zM409.5 244.1a26.9 26.9 0 1 1 26.9-26.9 26.97 26.97 0 0 1-26.9 26.9zm208.4 0a26.9 26.9 0 1 1 26.9-26.9 26.97 26.97 0 0 1-26.9 26.9zm223.4 100.7c-30.2 0-54.6 24.8-54.6 55.4v216.4c0 30.5 24.5 55.4 54.6 55.4 30.2 0 54.6-24.8 54.6-55.4V400.1c.1-30.6-24.3-55.3-54.6-55.3zm-658.6 0c-30.2 0-54.6 24.8-54.6 55.4v216.4c0 30.5 24.5 55.4 54.6 55.4 30.2 0 54.6-24.8 54.6-55.4V400.1c0-30.6-24.5-55.3-54.6-55.3z" />
+            </svg>
+        },
+        {
+            name: 'IOS', url: '#',
+            svg: <svg class="w-6 h-7 text-gray-800 dark:text-white"
+                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.537 12.625a4.421 4.421 0 0 0 2.684 4.047 10.96 10.96 0 0 1-1.384 2.845c-.834 1.218-1.7 2.432-3.062 2.457-1.34.025-1.77-.794-3.3-.794-1.531 0-2.01.769-3.275.82-1.316.049-2.317-1.318-3.158-2.532-1.72-2.484-3.032-7.017-1.27-10.077A4.9 4.9 0 0 1 8.91 6.884c1.292-.025 2.51.869 3.3.869.789 0 2.27-1.075 3.828-.917a4.67 4.67 0 0 1 3.66 1.984 4.524 4.524 0 0 0-2.16 3.805m-2.52-7.432A4.4 4.4 0 0 0 16.06 2a4.482 4.482 0 0 0-2.945 1.516 4.185 4.185 0 0 0-1.061 3.093 3.708 3.708 0 0 0 2.967-1.416Z" />
+            </svg>
+
+
+        },
+
+    ]
+},
+
+]
+
+
 const Footer = () => (
 
     <footer className="bg-white dark:bg-gray-900  ">
         <div className="mx-auto w-full max-w-screen-xl">
+
             <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4 ml-10">
-                <div>
-                    <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h2>
-                    <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                        <li className="mb-4">
-                            <a href="#" className=" hover:underline">About</a>
-                        </li>
-                        <li className="mb-4">
-                            <a href="#" className="hover:underline">Careers</a>
-                        </li>
-                        <li className="mb-4">
-                            <a href="#" className="hover:underline">Brand Center</a>
-                        </li>
-                        <li className="mb-4">
-                            <a href="#" className="hover:underline">Blog</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h2>
-                    <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                        <li className="mb-4">
-                            <a href="#" className="hover:underline">Discord Server</a>
-                        </li>
-                        <li className="mb-4">
-                            <a href="#" className="hover:underline">Twitter</a>
-                        </li>
-                        <li className="mb-4">
-                            <a href="#" className="hover:underline">Facebook</a>
-                        </li>
-                        <li className="mb-4">
-                            <a href="#" className="hover:underline">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                    <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                        <li className="mb-4">
-                            <a href="#" className="hover:underline">Privacy Policy</a>
-                        </li>
-                        <li className="mb-4">
-                            <a href="#" className="hover:underline">Licensing</a>
-                        </li>
-                        <li className="mb-4">
-                            <a href="#" className="hover:underline">Terms &amp; Conditions</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Download</h2>
-                    <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                        <li className="mb-4">
-                            <a href="#" className="hover:underline">iOS</a>
-                        </li>
-                        <li className="mb-4">
-                            <a href="#" className="hover:underline">Android</a>
-                        </li>
-                        <li className="mb-4">
-                            <a href="#" className="hover:underline">Windows</a>
-                        </li>
-                        <li className="mb-4">
-                            <a href="#" className="hover:underline">MacOS</a>
-                        </li>
-                    </ul>
-                </div>
+
+                {
+                    footerData.map((footerData, index) => (
+                        <div>
+                            <h2 className={`mb-6 text-sm font-semibold  uppercase ${index == 0 ? 'text-red-600' : 'text-gray-900'} dark:text-white`}>{footerData.title}</h2>
+                            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                                {
+                                    footerData.links.map((link) => (
+                                        <li className="mb-4">
+                                            <a href={link.url} className=" hover:underline">
+                                                <div className="flex items-center">
+                                                    <p>{link.name}</p>
+                                                    {link.svg && <div className="ml-4">{link.svg}</div>}
+                                                </div>
+                                            </a>
+                                        </li>
+                                    ))
+                                }
+
+                            </ul>
+                        </div>
+                    ))
+                }
             </div>
             <div className="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-around">
-                <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2023 <a href="https://flowbite.com/">Flowbite™</a>. All Rights Reserved.
+                <span className="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2024 <a href="https://flowbite.com/">Hisabuk™</a>. All Rights Reserved.
                 </span>
-                <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
-                    <a href="#" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
-                        <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
-                            <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd" />
-                        </svg>
-                        <span className="sr-only">Facebook page</span>
-                    </a>
-                    <a href="#" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
-                        <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 21 16">
-                            <path d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z" />
-                        </svg>
-                        <span className="sr-only">Discord community</span>
-                    </a>
-                    <a href="#" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
-                        <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 17">
-                            <path fill-rule="evenodd" d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z" clip-rule="evenodd" />
-                        </svg>
-                        <span className="sr-only">Twitter page</span>
-                    </a>
-                    <a href="#" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
-                        <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clip-rule="evenodd" />
-                        </svg>
-                        <span className="sr-only">GitHub account</span>
-                    </a>
-                    <a href="#" className="text-gray-400 hover:text-gray-900 dark:hover:text-white">
-                        <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z" clip-rule="evenodd" />
-                        </svg>
-                        <span className="sr-only">Dribbble account</span>
-                    </a>
-                </div>
+
             </div>
         </div>
     </footer>

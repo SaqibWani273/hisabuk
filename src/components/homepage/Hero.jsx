@@ -1,6 +1,6 @@
 // components/Hero.jsx
 import React from 'react';
-import Button from './Button';
+import Button from '../Button';
 const Hero = () => (
 
 
@@ -17,7 +17,7 @@ const Hero = () => (
             the best version of yourself, one deed at a time. </p>
 
 
-        <Button text="Get Started Now" />
+        <Button text="Get Started Now" onClick={() => { }} />
 
     </section>
 

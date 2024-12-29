@@ -1,6 +1,6 @@
 // components/About.jsx
 import React from 'react';
-import logo1 from '../assets/images/hisabuk_logo1.svg';
+import logo1 from '../../assets/images/hisabuk_logo1.svg';
 const WhatIsHisabuk = () => (
     <section className="bg-white px-10 text-center">
         {/* header section */}
