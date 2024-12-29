@@ -19,7 +19,7 @@ const myStyle = {
 const Homepage = () => (
     <>
 
-        <div className='bg-homepageImg1 w-full h-[768px] bg-contain bg-no-repeat bg-top bg-center'>
+        <div className='bg-homepageImg1 w-full h-[256px] sm:h-[356px] md:h-[612px] lg:h-[768px] bg-contain bg-no-repeat bg-top bg-center'>
             <Navbar />
             <Hero />
         </div>

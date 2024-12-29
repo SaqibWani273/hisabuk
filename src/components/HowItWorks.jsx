@@ -37,13 +37,13 @@ const stayInspired = [{
 }]
 
 const HowItWorks = () => (
-    <section className=" py-16">
+    <section className=" py-16 md:px-0 px-4">
         <h2 className="text-4xl font-bold text-center text-blue-800 mb-8">How Hisabuk Works</h2>
         <div >
             {/* steps */}
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
                 {steps.map((step) => (
-                    <div key={step.title} className="bg-white p-8 rounded-lg shadow-md">
+                    <div key={step.title} className="bg-white p-8 drop-shadow-md rounded-lg shadow-lg md:shadow-md">
 
                         <center className='mb-5'>
 
@@ -80,8 +80,10 @@ const HowItWorks = () => (
 
 
             <div >
+
+                <h2 className="text-xl md:text-4xl font-bold text-center text-blue-800 mb-8">Stay Inspired & Stay Accountable</h2>
                 {stayInspired.map((inspired, index) => (
-                    <div key={inspired.title} className="flex container mx-auto grid grid-cols-3 my-8 gap-8 animate-slide-in">
+                    <div key={inspired.title} className="flex container mx-auto grid grid-cols-3 my-8 gap-2 md:gap-8 animate-slide-in pr-8 md:pr-0">
                         {
                             index === 0 ? (<>
                                 {StayInspiredImage({ imgSrc: inspired.image })}
@@ -100,16 +102,22 @@ const HowItWorks = () => (
         </div>
     </section>
 );
+
 function StayInspiredInfo({ inspired, pl, pr }) {
     return (
-        <div className="flex flex-col text-left justify-center  " style={{ paddingLeft: `${pl}px`, paddingRight: `${pr}px` }}>
-            {
-                inspired.title && <h3 className="text-2xl font-bold  mb-2">{inspired.title}</h3>
-            }
+        <div className={`flex flex-col text-left justify-center pl-4  md:pl-${pl} md:pr-${pr} col-span-2 md:col-span-1`}  >
+            {/* {
+                inspired.title && <h3 className=" text-2xl font-bold  mb-2">{inspired.title}</h3>
+            } */}
             <p >{inspired.description}</p>
             {
 
-                inspired.btnText && <span className='mt-8'><Button text="Get Started Now" /></span>
+                inspired.btnText && <div className='mt-8 h-12'>
+                    {/* <button className='md:px-6 px-3 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700' >
+                        Get Started Now
+                         </button> */}
+                    <Button text={inspired.btnText} />
+                </div>
             }
 
 
@@ -118,9 +126,9 @@ function StayInspiredInfo({ inspired, pl, pr }) {
 }
 function StayInspiredImage({ imgSrc }) {
     return (
-        <div className='bg-grey-200 py-8 pl-8   col-span-2  '>
+        <div className='bg-grey-200 py-8  col-span-1 flex justify-center  md:col-span-2  '>
             {/* <center className='mb-5 '> */}
-            <img src={`${imgSrc}`} alt="Stay Inspired" className='h-72 w-4/5 object-cover' />
+            <img src={`${imgSrc}`} alt="Stay Inspired" className='h-32 md:h-72 w-auto md:w-4/5 md:object-cover' />
             {/* </center> */}
         </div>
     )

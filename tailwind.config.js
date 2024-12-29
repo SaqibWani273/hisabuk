@@ -10,6 +10,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['"Josefin Sans"', 'sans-serif'], // Set Josefin Sans as default sans-serif
+      arabic: ['"Lateef"', 'Amiri', 'serif'], // Set Lateef as default serif
     },
     extend: {
       backgroundImage: {
