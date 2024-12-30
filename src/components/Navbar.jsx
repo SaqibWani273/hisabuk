@@ -2,11 +2,15 @@
 import React from 'react';
 import img from '../assets/images/hisabuk_logo.png'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const navbarItems =
     ['Home', 'Templates', 'Progress Tracking', 'Profile', 'About us']
-const Navbar = () => (
-    <nav >
+const Navbar = () => {
+
+
+    return <nav >
         <div className="container mx-auto flex justify-between items-center py-4 px-6 ">
             <div className='flex'>
                 <img src={img} alt="" height={"5px"} width={"50px"} />
@@ -25,7 +29,7 @@ const Navbar = () => (
             </div>
         </div>
     </nav>
-);
+}
 
 
 const Navbar1 = () => {
@@ -78,16 +82,17 @@ const Navbar1 = () => {
 
 const Navbar2 = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
 
     return (
 
 
         <nav class="">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <Link to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src={img} class="h-8" alt="Hisabuk Logo" />
                     <span class="self-center text-2xl font-semibold whitespace-nowrap  font-bold text-green-600">Hisabuk</span>
-                </a>
+                </Link>
 
                 <div className="hidden lg:flex space-x-6">
                     {navbarItems.map((item) => (
@@ -97,7 +102,7 @@ const Navbar2 = () => {
                     ))}
                 </div>
                 <div className="hidden sm:flex">
-                    <button className="px-4 py-2 bg-blue-600 text-white rounded-md">Login</button>
+                    <button className="px-4 py-2 bg-blue-600 text-white rounded-md" onClick={() => navigate('/login')}>Login</button>
                     <button className="ml-4 px-4 py-2 border rounded-md text-blue-600">Register</button>
                 </div>
                 <button onClick={() => setIsOpen(!isOpen)} className="text-gray-800 focus:outline-none" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm  rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none   dark:hover:bg-gray-700 " >

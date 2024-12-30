@@ -6,6 +6,7 @@ import inspired from "../../assets/images/inspired1.jpg";
 import reward from "../../assets/images/inspired2.jpg";
 import Button from '../Button';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 
 const steps = [
@@ -135,6 +136,7 @@ const HowItWorks = () => {
     </section>
 };
 function StayInspiredInfo({ inspired, pl, pr }) {
+    const navigate = useNavigate();
     return (
         <div className={`flex flex-col text-left justify-center pl-4  md:pl-${pl} md:pr-${pr} col-span-2 md:col-span-1`}  >
             {/* {
@@ -147,7 +149,7 @@ function StayInspiredInfo({ inspired, pl, pr }) {
                     {/* <button className='md:px-6 px-3 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700' >
                         Get Started Now
                          </button> */}
-                    <Button text={inspired.btnText} />
+                    <Button text={inspired.btnText} onClick={() => { navigate('/createActivities') }} />
                 </div>
             }
 

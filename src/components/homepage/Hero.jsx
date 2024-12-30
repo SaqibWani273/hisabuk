@@ -1,10 +1,12 @@
 // components/Hero.jsx
 import React from 'react';
 import Button from '../Button';
-const Hero = () => (
 
+import { useNavigate } from 'react-router-dom';
+const Hero = () => {
 
-    <section className="md:absolute relative  top-1/4 md:top-1/2  left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center pb-8 ">
+    const navigate = useNavigate();
+    return <section className="md:absolute relative  top-1/4 md:top-1/2  left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center pb-8 ">
         {/* <section className="absolute left-0 right-0 margin-auto top-8  text-center  left-1/2  "> */}
         <h1 className="text-xl md:text-4xl font-bold text-blue-800 md:mb-4 ">
             Welcome to Hisabuk
@@ -17,12 +19,12 @@ const Hero = () => (
             the best version of yourself, one deed at a time. </p>
 
 
-        <Button text="Get Started Now" onClick={() => { }} />
+        <Button text="Get Started Now" onClick={() => { navigate('/createActivities') }} />
 
     </section>
 
 
-);
+}
 const Div = () => (
     <div>
 
