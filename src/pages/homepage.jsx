@@ -5,28 +5,35 @@ import WhatIsHisabuk from '../components/homepage/WhatIsHisabuk';
 import HowItWorks from '../components/homepage/HowItWorks';
 import Footer from '../components/Footer';
 import bgimage from '../assets/images/homepage_img5.png';
-const myStyle = {
-    backgroundImage:
-        `url(${bgimage})`,
-    backgroundSize: "contain",
-    // backgroundSize: "cover",
-    width: "100%",
-    height: "768px",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "top center"
-};
 
-const Homepage = () => (
-    <>
+
+import { motion } from 'framer-motion';
+
+
+const Homepage = () => {
+    const sectionVariants = {
+        hidden: { opacity: 0, x: 50 },
+        visible: { opacity: 1, x: 0 },
+    };
+    return <>
 
         <div className='bg-homepageImg1 w-full h-[256px] sm:h-[356px] md:h-[612px] lg:h-[768px] bg-contain bg-no-repeat bg-top bg-center'>
             <Navbar />
             <Hero />
         </div>
-
+        {/* <motion.section
+            id="about"
+            className="py-16 px-6 text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+            variants={sectionVariants}
+        > */}
         <WhatIsHisabuk />
+        {/* </motion.section> */}
         <HowItWorks />
         <Footer />
     </>
-);
+};
 export default Homepage;

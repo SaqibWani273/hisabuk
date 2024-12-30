@@ -5,6 +5,7 @@ import improve from "../../assets/images/improve.svg";
 import inspired from "../../assets/images/inspired1.jpg";
 import reward from "../../assets/images/inspired2.jpg";
 import Button from '../Button';
+import { motion } from 'framer-motion';
 
 
 const steps = [
@@ -36,24 +37,41 @@ const stayInspired = [{
     btnText: 'Get Started Now'
 }]
 
-const HowItWorks = () => (
-    <section className=" py-16 md:px-0 px-4">
+const HowItWorks = () => {
+    const sectionVariants = {
+        hidden: { opacity: 0, x: 50 },
+        visible: { opacity: 1, x: 0 },
+    }
+    const sectionVariants1 = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0 },
+    }
+    return <section className=" py-16 md:px-0 px-4">
         <h2 className="text-4xl font-bold text-center text-blue-800 mb-8">How Hisabuk Works</h2>
         <div >
             {/* steps */}
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
-                {steps.map((step) => (
-                    <div key={step.title} className="bg-white p-8 drop-shadow-md rounded-lg shadow-lg md:shadow-md">
+                {steps.map((step, index) => (
+                    <motion.section
+                        id={step.title}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
+                        transition={{ duration: 1 + index / 3 }}
+                        variants={sectionVariants}
+                    >
+                        <div key={step.title} className="bg-white p-8 drop-shadow-md rounded-lg shadow-lg md:shadow-md">
 
-                        <center className='mb-5'>
+                            <center className='mb-5'>
 
-                            <img src={`${step.image}`} alt="Open Book" height={"100px"} width={"100px"} />
-                        </center>
+                                <img src={`${step.image}`} alt="Open Book" height={"100px"} width={"100px"} />
+                            </center>
 
 
-                        <h3 className="text-xl font-bold  mb-2">{step.title}</h3>
-                        <p >{step.description}</p>
-                    </div>
+                            <h3 className="text-xl font-bold  mb-2">{step.title}</h3>
+                            <p >{step.description}</p>
+                        </div>
+                    </motion.section>
                 ))}
             </div>
             {/* video of how it works */}
@@ -82,27 +100,40 @@ const HowItWorks = () => (
             <div >
 
                 <h2 className="text-xl md:text-4xl font-bold text-center text-blue-800 mb-8">Stay Inspired & Stay Accountable</h2>
+
                 {stayInspired.map((inspired, index) => (
-                    <div key={inspired.title} className="flex container mx-auto grid grid-cols-3 my-8 gap-2 md:gap-8 animate-slide-in pr-8 md:pr-0">
-                        {
-                            index === 0 ? (<>
-                                {StayInspiredImage({ imgSrc: inspired.image })}
-                                {StayInspiredInfo({ inspired, pl: 0, pr: 32 })}</>) : (<>
+                    <motion.section
+                        id="Stay Inspired & Stay Accountable"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
+                        transition={{ duration: 1 }}
+                        variants={sectionVariants1}
+                    >
+                        <div key={inspired.title} className="flex container mx-auto grid grid-cols-3 my-8 gap-2 md:gap-8 animate-slide-in pr-8 md:pr-0">
+                            {
+                                index === 0 ? (
 
-                                    {StayInspiredInfo({ inspired, pl: 32, pr: 0 })}
-                                    {StayInspiredImage({ imgSrc: inspired.image })}
+                                    <>
+                                        {StayInspiredImage({ imgSrc: inspired.image })}
+                                        {StayInspiredInfo({ inspired, pl: 0, pr: 32 })}</>) : (<>
 
-                                </>)
-                        }
+                                            {StayInspiredInfo({ inspired, pl: 32, pr: 0 })}
+                                            {StayInspiredImage({ imgSrc: inspired.image })}
 
-                    </div>
+                                        </>)
+                            }
+
+                        </div>
+
+                    </motion.section>
                 ))}
+
             </div>
 
         </div>
     </section>
-);
-
+};
 function StayInspiredInfo({ inspired, pl, pr }) {
     return (
         <div className={`flex flex-col text-left justify-center pl-4  md:pl-${pl} md:pr-${pr} col-span-2 md:col-span-1`}  >
