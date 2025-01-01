@@ -21,17 +21,7 @@ const Homepage = () => {
             <Navbar />
             <Hero />
         </div>
-        {/* <motion.section
-            id="about"
-            className="py-16 px-6 text-center"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5 }}
-            variants={sectionVariants}
-        > */}
         <WhatIsHisabuk />
-        {/* </motion.section> */}
         <HowItWorks />
         <Footer />
     </>

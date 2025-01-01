@@ -1,0 +1,15 @@
+{
+
+        "editor.formatOnSave": true,
+        "prettier.singleQuote": true,
+        "prettier.jsxSingleQuote": true,
+        "prettier.semi": true,
+        "prettier.tabWidth": 2,
+      
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#4B1D37",
+        "titleBar.activeBackground": "#69294E",
+        "titleBar.activeForeground": "#FCF8FB"
+    },
+    
+}

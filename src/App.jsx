@@ -3,6 +3,7 @@ import './App.css';
 import Homepage from './pages/homepage';
 import CreateActivities from './pages/create_activities';
 import Login from './pages/login';
+import ActivitiesOverview from './pages/activities_overview';
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
                 <Route path='/' element={< Homepage />} />
                 <Route path='/createActivities' element={<CreateActivities />} />
                 <Route path='/login' element={<Login />} />
+                <Route path='/activitiesOverview' element={<ActivitiesOverview />} />
             </Routes>
         </div>
     );

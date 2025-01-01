@@ -76,21 +76,18 @@ const HowItWorks = () => {
                 ))}
             </div>
             {/* video of how it works */}
-            <div className='flex justify-center my-16'>
-                {/* <video class="w-1/2 h-auto max-w-full" controls>
-                    <source src="https://docs.material-tailwind.com/demo.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video> */}
+            <div className='flex justify-center my-16 h-64 md:h-72 '>
+               
                 <iframe
-                    width="560"
-                    height="315"
+                    
+                   
                     // https://youtu.be/?si=
                     src="https://www.youtube.com/embed/IB_M5lfJDzI"
                     title="YouTube video"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                    className="rounded-lg shadow-lg"
+                    className="rounded-lg shadow-lg md:w-96"
                 ></iframe>
             </div>
 
