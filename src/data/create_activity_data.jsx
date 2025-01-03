@@ -3,23 +3,24 @@ import prohibitedSvg from '../assets/images/prohibited.svg';
 import importantSvg from '../assets/images/important.svg';
 import recommendedSvg from '../assets/images/recommended.svg';
 import addictionAvoidanceSvg from '../assets/images/addiction.svg';
+
+//unmarked activity
 class Activity {
-  constructor(
-    id,
-    name,
-    actCat,
-    rewardPoints,
-    penaltyPoints,
-    category,
-    duration
-  ) {
+  constructor(id, name, actCat, rewardPoints, penaltyPoints, duration) {
     this.id = id;
     this.name = name; // String
     this.actCat = actCat; // ActivityCategory
     this.rewardPoints = rewardPoints; // Number
     this.penaltyPoints = penaltyPoints; // Number
-
     this.duration = duration;
+  }
+}
+class MarkedActivity {
+  constructor(id, name, actCat, points) {
+    this.id = id;
+    this.name = name; // String
+    this.actCat = actCat; // ActivityCategory
+    this.points = points; // Number
   }
 }
 const ScheduleDuration = {
@@ -76,4 +77,10 @@ const categories = [
   ),
 ];
 
-export { Activity, ActivityCategory, categories, ScheduleDuration };
+export {
+  Activity,
+  ActivityCategory,
+  categories,
+  ScheduleDuration,
+  MarkedActivity,
+};

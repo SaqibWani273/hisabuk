@@ -1,21 +1,18 @@
-import {
-  homepageImg1Url
-
-} from './src/utils/const';
+import { homepageImg1Url } from './src/utils/const';
 /** @type {import('tailwindcss').Config} */
 
-
 module.exports = {
-  content: ["./src/**/*.{html,js,jsx}"],
+  content: ['./src/**/*.{html,js,jsx}'],
   theme: {
     fontFamily: {
-      sans: ['"Josefin Sans"', 'sans-serif'], // Set Josefin Sans as default sans-serif
+      // sans: ['"Josefin Sans"', 'sans-serif'], // Set Josefin Sans as default sans-serif
+      sans: ['"ABeeZee"', 'sans-serif'], // Set Josefin Sans as default sans-serif
       arabic: ['"Lateef"', 'Amiri', 'serif'], // Set Lateef as default serif
     },
     extend: {
       backgroundImage: {
-        'homepageImg1': "url('/src/assets/images/homepage_img5.png')",
-        "homepageImg2": "url('/src/assets/images/homepage_img2.png')",
+        homepageImg1: "url('/src/assets/images/homepage_img5.png')",
+        homepageImg2: "url('/src/assets/images/homepage_img2.png')",
       },
       keyframes: {
         'slide-in': {
@@ -29,4 +26,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};

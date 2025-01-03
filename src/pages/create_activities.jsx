@@ -12,7 +12,8 @@ import {
 } from '../data/create_activity_data';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+
 import LocalStorage from '../data/local_storage';
 
 const CreateActivities = () => {
@@ -20,6 +21,22 @@ const CreateActivities = () => {
   const [showAddActivityPage, setShowAddActivityPage] = useState(false);
   const [activities, setActivities] = useState([]);
   const navigate = useNavigate();
+  var location = useLocation();
+  const returnedObject = location.state;
+  const setDailySchedule = (name, activities) => {
+    LocalStorage.addNewDailySchedule(name, activities);
+    navigate('/activitiesOverview', {
+      state: { activities: activities, showToast: true },
+    });
+  };
+  if (returnedObject) {
+    const { name, activities } = returnedObject;
+    // setDailySchedule(name, activities);
+    LocalStorage.addNewDailySchedule(name, activities);
+    navigate('/activitiesOverview', {
+      state: { activities: activities, showToast: true },
+    });
+  }
 
   return (
     <div>
@@ -36,6 +53,7 @@ const CreateActivities = () => {
             setShowAddActivityPage(true);
           }}
           addNewActivity={(activity) => {
+            activity.id = activities.length + 1;
             setActivities([...activities, activity]);
             setShowAddActivityPage(true);
           }}
@@ -45,12 +63,7 @@ const CreateActivities = () => {
       {activities.length > 0 && (
         <div className='flex justify-center mb-16 '>
           <button
-            onClick={() => {
-              LocalStorage.setSchedule(duration, activities);
-              navigate('/activitiesOverview', {
-                state: { activities: activities, showToast: true },
-              });
-            }}
+            onClick={() => setDailySchedule('Nulldldldlal', activities)}
             className=' px-4 py-2 bg-blue-600 text-white rounded-md  hover:bg-blue-900 hover:shadow-lg transition duration-300 ease-in-out'
           >
             Set as {duration} Schedule
@@ -130,6 +143,7 @@ function SelectDuration({ onSelectDuration }) {
   );
 }
 function AddActivity({ duration, activities, setShowAddActivityPage }) {
+  const navigate = useNavigate();
   return (
     <div>
       <h2 className='text-2xl md:text-3xl flex justify-center pb-8 font-bold text-blue-800'>
@@ -178,7 +192,7 @@ function AddActivity({ duration, activities, setShowAddActivityPage }) {
           </div>
         </div>
 
-        {activities.length == 0 && (
+        {activities.length === 0 && (
           <div>
             {/* OR Divider */}
             <p className='text-gray-600 font-medium text-lg mb-8 flex justify-center'>
@@ -186,17 +200,19 @@ function AddActivity({ duration, activities, setShowAddActivityPage }) {
             </p>
 
             {/* Choose from Templates */}
-            <div>
-              <div className='flex flex-col items-center justify-center text-center bg-white shadow-lg rounded-lg p-8 md:w-96 w-80 mx-auto cursor-pointer hover:shadow-2xl hover:scale-105 transition transform'>
-                <img
-                  src={chooseTemplate}
-                  alt='template'
-                  className='w-16 h-16 mb-4'
-                />
-                <p className='text-gray-800 font-semibold'>
-                  Choose From Ready-made Templates
-                </p>
-              </div>
+
+            <div
+              onClick={() => navigate('/myTemplates', { state: true })}
+              className='flex flex-col items-center justify-center text-center bg-white shadow-lg rounded-lg p-8 md:w-96 w-80 mx-auto cursor-pointer hover:shadow-2xl hover:scale-105 transition transform'
+            >
+              <img
+                src={chooseTemplate}
+                alt='template'
+                className='w-16 h-16 mb-4'
+              />
+              <p className='text-gray-800 font-semibold'>
+                Choose From Ready-made Templates
+              </p>
             </div>
           </div>
         )}
